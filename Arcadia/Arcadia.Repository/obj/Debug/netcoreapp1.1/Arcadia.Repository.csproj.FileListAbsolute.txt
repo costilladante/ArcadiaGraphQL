@@ -1,0 +1,7 @@
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\bin\Debug\netcoreapp1.1\Arcadia.Repository.deps.json
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\bin\Debug\netcoreapp1.1\Arcadia.Repository.dll
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\bin\Debug\netcoreapp1.1\Arcadia.Repository.pdb
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\obj\Debug\netcoreapp1.1\Arcadia.Repository.csprojResolveAssemblyReference.cache
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\obj\Debug\netcoreapp1.1\Arcadia.Repository.AssemblyInfo.cs
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\obj\Debug\netcoreapp1.1\Arcadia.Repository.dll
+D:\Dante\Arcadia\Arcadia\Arcadia.Repository\obj\Debug\netcoreapp1.1\Arcadia.Repository.pdb

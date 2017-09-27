@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{A55F7A59-570C-4506-BA47-0DD3C2959703}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{E3D9967B-CCD1-4F23-B6E1-7691A0A018E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{05F037E9-EED7-427B-9749-C8864F2DF875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.API", "Arcadia.API\Arcadia.API.csproj", "{07E091AE-90A8-4893-94B2-362BBF2981E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.Repository", "Arcadia.Repository\Arcadia.Repository.csproj", "{618E029A-C910-4E4D-AEFA-690E33E93C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.Constants", "Arcadia.Constants\Arcadia.Constants.csproj", "{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.Model", "Arcadia.Model\Arcadia.Model.csproj", "{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07E091AE-90A8-4893-94B2-362BBF2981E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E091AE-90A8-4893-94B2-362BBF2981E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E091AE-90A8-4893-94B2-362BBF2981E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E091AE-90A8-4893-94B2-362BBF2981E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618E029A-C910-4E4D-AEFA-690E33E93C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618E029A-C910-4E4D-AEFA-690E33E93C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618E029A-C910-4E4D-AEFA-690E33E93C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618E029A-C910-4E4D-AEFA-690E33E93C08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3D9967B-CCD1-4F23-B6E1-7691A0A018E4} = {A55F7A59-570C-4506-BA47-0DD3C2959703}
+		{05F037E9-EED7-427B-9749-C8864F2DF875} = {A55F7A59-570C-4506-BA47-0DD3C2959703}
+		{07E091AE-90A8-4893-94B2-362BBF2981E0} = {E3D9967B-CCD1-4F23-B6E1-7691A0A018E4}
+		{618E029A-C910-4E4D-AEFA-690E33E93C08} = {E3D9967B-CCD1-4F23-B6E1-7691A0A018E4}
+		{F235DFCA-BDBA-4BDF-8910-A8A07ADAED59} = {05F037E9-EED7-427B-9749-C8864F2DF875}
+		{8B2F70EB-47A8-4FDD-BAE1-450CF7AB050F} = {05F037E9-EED7-427B-9749-C8864F2DF875}
+	EndGlobalSection
+EndGlobal
