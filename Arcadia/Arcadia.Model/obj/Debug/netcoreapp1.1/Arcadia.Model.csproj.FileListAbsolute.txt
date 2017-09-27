@@ -1,7 +1,0 @@
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\bin\Debug\netcoreapp1.1\Arcadia.Model.deps.json
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\bin\Debug\netcoreapp1.1\Arcadia.Model.dll
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\bin\Debug\netcoreapp1.1\Arcadia.Model.pdb
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\obj\Debug\netcoreapp1.1\Arcadia.Model.csprojResolveAssemblyReference.cache
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\obj\Debug\netcoreapp1.1\Arcadia.Model.AssemblyInfo.cs
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\obj\Debug\netcoreapp1.1\Arcadia.Model.dll
-D:\Dante\Arcadia\Arcadia\Arcadia.Model\obj\Debug\netcoreapp1.1\Arcadia.Model.pdb
