@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Arcadia.API.Queries;
+using Arcadia.Repository;
+using Arcadia.Repository.EFRepositories;
 using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -35,15 +38,18 @@ namespace Arcadia.API
 
             services.AddTransient<ArcadiaQuery>();
             services.AddTransient<IHeroRepository, HeroRepository>();
+            services.AddDbContext<ArcadiaContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("ArcadiaDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ArcadiaContext db)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            db.EnsureSeedData();
         }
     }
 }
