@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v1.1": {
       "arcadia.api/1.0.0": {
         "dependencies": {
+          "Arcadia.Repository": "1.0.0",
           "GraphQL": "0.17.3",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.2",
@@ -1805,6 +1806,17 @@
         },
         "compile": {
           "lib/netstandard1.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "arcadia.repository/1.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.2"
+        },
+        "runtime": {
+          "Arcadia.Repository.dll": {}
+        },
+        "compile": {
+          "Arcadia.Repository.dll": {}
         }
       },
       "libuv/1.9.1": {
@@ -4272,6 +4284,11 @@
       "sha512": "sha512-tcfPv+q/nK+5EsAxCLauIOd0kL+lZsXQ4lPKRnh8ex6O1Rm8WAN3LtF2GDFHyD0glSmUpIrgTnLhHCkMAKo3Ug==",
       "path": "system.text.encodings.web/4.3.1",
       "hashPath": "system.text.encodings.web.4.3.1.nupkg.sha512"
+    },
+    "arcadia.repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "libuv/1.9.1": {
       "type": "package",

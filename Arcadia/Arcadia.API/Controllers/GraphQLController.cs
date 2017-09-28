@@ -1,23 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Arcadia.API.Models;
 using Arcadia.API.Queries;
+using Arcadia.Repository.Repositories;
 using GraphQL;
 using GraphQL.Types;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Arcadia.API.Controllers
-{   
+{
     [Route("graphql")]
     public class GraphQLController : Controller
     {
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GraphQLQuery query)
         {
-            var schema = new Schema {Query = new ArcadiaQuery()};
+            var schema = new Schema {Query = new ArcadiaQuery(new HeroRepository())};
 
             var result = await new DocumentExecuter().ExecuteAsync(_ =>
             {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Arcadia.API.Models;
+﻿using Arcadia.Repository.Models;
 using GraphQL.Types;
 
 namespace Arcadia.API.ModelTypes

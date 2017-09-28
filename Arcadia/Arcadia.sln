@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{A55F7A59-570
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{E3D9967B-CCD1-4F23-B6E1-7691A0A018E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.API", "Arcadia.API\Arcadia.API.csproj", "{07E091AE-90A8-4893-94B2-362BBF2981E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadia.API", "Arcadia.API\Arcadia.API.csproj", "{07E091AE-90A8-4893-94B2-362BBF2981E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcadia.Repository", "Arcadia.Repository\Arcadia.Repository.csproj", "{618E029A-C910-4E4D-AEFA-690E33E93C08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arcadia.Repository", "Arcadia.Repository\Arcadia.Repository.csproj", "{618E029A-C910-4E4D-AEFA-690E33E93C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,3 +7,5 @@ D:\Dante\Arcadia\Arcadia\Arcadia.API\obj\Debug\netcoreapp1.1\Arcadia.API.Assembl
 D:\Dante\Arcadia\Arcadia\Arcadia.API\bin\Debug\netcoreapp1.1\Arcadia.API.pdb
 D:\Dante\Arcadia\Arcadia\Arcadia.API\obj\Debug\netcoreapp1.1\Arcadia.API.dll
 D:\Dante\Arcadia\Arcadia\Arcadia.API\obj\Debug\netcoreapp1.1\Arcadia.API.pdb
+D:\Dante\Arcadia\Arcadia\Arcadia.API\bin\Debug\netcoreapp1.1\Arcadia.Repository.dll
+D:\Dante\Arcadia\Arcadia\Arcadia.API\bin\Debug\netcoreapp1.1\Arcadia.Repository.pdb
