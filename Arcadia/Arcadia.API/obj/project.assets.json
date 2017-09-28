@@ -2,6 +2,21 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
+      "GraphiQL/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "1.1.0",
+          "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.1.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/GraphiQL.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/GraphiQL.dll": {}
+        }
+      },
       "GraphQL/0.17.3": {
         "type": "package",
         "dependencies": {
@@ -1312,6 +1327,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.1.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Physical/1.1.1": {
@@ -4195,6 +4223,16 @@
     }
   },
   "libraries": {
+    "GraphiQL/1.0.0": {
+      "sha512": "I/wqcetdj4OOGp3jypweOia314To23IGVJXU7MGqAxSOMpOBHYqm6c9i1lFHfMqrz0zk2lEHGDZFp7P7pydHLg==",
+      "type": "package",
+      "path": "graphiql/1.0.0",
+      "files": [
+        "graphiql.1.0.0.nupkg.sha512",
+        "graphiql.nuspec",
+        "lib/netstandard1.6/GraphiQL.dll"
+      ]
+    },
     "GraphQL/0.17.3": {
       "sha512": "OKqDDo1foDvhaXVgaCs5OJFYEkMtfgM1zaWRLFSibQQV7GmP5nSVonXD9EvoRBISlprYcICoeOa3qzW89LSnJw==",
       "type": "package",
@@ -5273,6 +5311,21 @@
         "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.xml",
         "microsoft.extensions.fileproviders.composite.1.1.1.nupkg.sha512",
         "microsoft.extensions.fileproviders.composite.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/1.1.0": {
+      "sha512": "5RcPDO/eRvcgRidXFrE8Oz6ECWClbWtKD27YOAFSutYLiFCRxskSJDD7WRfydtIfWeUpqeUwdaFiWnXS1ZZINg==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.embedded/1.1.0",
+      "files": [
+        "lib/net451/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/net451/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "microsoft.extensions.fileproviders.embedded.1.1.0.nupkg.sha512",
+        "microsoft.extensions.fileproviders.embedded.nuspec"
       ]
     },
     "Microsoft.Extensions.FileProviders.Physical/1.1.1": {
@@ -10824,7 +10877,8 @@
       "Microsoft.Extensions.Logging.Debug >= 1.1.2",
       "Microsoft.NETCore.App >= 1.1.2",
       "Microsoft.VisualStudio.Web.BrowserLink >= 1.1.2",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 1.1.1"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 1.1.1",
+      "graphiql >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10857,6 +10911,10 @@
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "1.1.2"
+          },
+          "graphiql": {
+            "target": "Package",
+            "version": "1.0.0"
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",

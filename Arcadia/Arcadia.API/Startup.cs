@@ -48,6 +48,7 @@ namespace Arcadia.API
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseGraphiQl();
             app.UseMvc();
             db.EnsureSeedData();
         }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "dd5ea787940e11ed669fc3297da0825b772a967b"
+    "signature": "e52c4948f75bae30b573e30e0c7f3ccf98522fee"
   },
   "compilationOptions": {
     "defines": [
@@ -35,13 +35,28 @@
           "Microsoft.Extensions.Logging.Debug": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
           "Microsoft.VisualStudio.Web.BrowserLink": "1.1.2",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.1"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.1",
+          "GraphiQL": "1.0.0"
         },
         "runtime": {
           "Arcadia.API.dll": {}
         },
         "compile": {
           "Arcadia.API.dll": {}
+        }
+      },
+      "graphiql/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "1.1.3",
+          "Microsoft.AspNetCore.StaticFiles": "1.1.2",
+          "Microsoft.Extensions.FileProviders.Embedded": "1.1.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/GraphiQL.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/GraphiQL.dll": {}
         }
       },
       "graphql/0.17.3": {
@@ -1101,6 +1116,18 @@
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.Extensions.FileProviders.Composite.dll": {}
+        }
+      },
+      "microsoft.extensions.fileproviders.embedded/1.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.5/Microsoft.Extensions.FileProviders.Embedded.dll": {}
         }
       },
       "microsoft.extensions.fileproviders.physical/1.1.1": {
@@ -3490,6 +3517,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "graphiql/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I/wqcetdj4OOGp3jypweOia314To23IGVJXU7MGqAxSOMpOBHYqm6c9i1lFHfMqrz0zk2lEHGDZFp7P7pydHLg==",
+      "path": "graphiql/1.0.0",
+      "hashPath": "graphiql.1.0.0.nupkg.sha512"
+    },
     "graphql/0.17.3": {
       "type": "package",
       "serviceable": true,
@@ -3986,6 +4020,13 @@
       "sha512": "sha512-nHGefPrdDsv0nUKAX+oox8njOCEoaQsq1WQdor9jZu+d24Uihj7O9gWKlPezbJq3K1HOLCBFFaVRVXBSHlggWQ==",
       "path": "microsoft.extensions.fileproviders.composite/1.1.1",
       "hashPath": "microsoft.extensions.fileproviders.composite.1.1.1.nupkg.sha512"
+    },
+    "microsoft.extensions.fileproviders.embedded/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5RcPDO/eRvcgRidXFrE8Oz6ECWClbWtKD27YOAFSutYLiFCRxskSJDD7WRfydtIfWeUpqeUwdaFiWnXS1ZZINg==",
+      "path": "microsoft.extensions.fileproviders.embedded/1.1.0",
+      "hashPath": "microsoft.extensions.fileproviders.embedded.1.1.0.nupkg.sha512"
     },
     "microsoft.extensions.fileproviders.physical/1.1.1": {
       "type": "package",
