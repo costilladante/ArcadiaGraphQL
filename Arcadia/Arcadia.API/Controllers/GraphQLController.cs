@@ -11,10 +11,17 @@ namespace Arcadia.API.Controllers
     [Route("graphql")]
     public class GraphQLController : Controller
     {
+        private ArcadiaQuery _arcadiaQuery { get; }
+
+        public GraphQLController(ArcadiaQuery arcadiaQuery)
+        {
+            _arcadiaQuery = arcadiaQuery;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GraphQLQuery query)
         {
-            var schema = new Schema {Query = new ArcadiaQuery(new HeroRepository())};
+            var schema = new Schema {Query = _arcadiaQuery};
 
             var result = await new DocumentExecuter().ExecuteAsync(_ =>
             {

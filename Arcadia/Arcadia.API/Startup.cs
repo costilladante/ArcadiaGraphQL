@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Arcadia.API.Queries;
+using Arcadia.Repository.Interfaces;
+using Arcadia.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +32,9 @@ namespace Arcadia.API
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<ArcadiaQuery>();
+            services.AddTransient<IHeroRepository, HeroRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
