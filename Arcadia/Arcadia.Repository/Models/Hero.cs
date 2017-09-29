@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Arcadia.Repository.Models
+﻿namespace Arcadia.Repository.Models
 {
     public class Hero
     {

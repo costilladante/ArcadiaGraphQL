@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Arcadia.API.Queries;
+﻿using Arcadia.API.Queries;
 using Arcadia.Repository;
 using Arcadia.Repository.EFRepositories;
 using Arcadia.Repository.Interfaces;

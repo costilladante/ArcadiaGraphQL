@@ -5,19 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Arcadia.Repository.Repositories
 {
-    public class HeroRepository: IHeroRepository
+    public class HeroRepository : IHeroRepository
     {
-        private readonly List<Hero> _heroes = new List<Hero>
+        private ArcadiaContext _db { get; }
+
+        public HeroRepository(ArcadiaContext db)
         {
-            new Hero{Id = 1, Name = "Mario"}
-        };
+            _db = db;
+        }
 
         public Task<Hero> Get(int id)
         {
-            return Task.FromResult(_heroes.FirstOrDefault(hero => hero.Id == id));
+            return _db.Heroes.FirstOrDefaultAsync(hero => hero.Id == id);
         }
     }
 }

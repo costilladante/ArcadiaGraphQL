@@ -11,7 +11,7 @@ namespace Arcadia.API.Queries
         {
             Field<HeroType>(
                 "hero",
-                resolve: context => _heroRepository.Get(1) // new Hero { Id = 1, Name = "Mario"}
+                resolve: context => _heroRepository.Get(1)
             );
         }
     }
