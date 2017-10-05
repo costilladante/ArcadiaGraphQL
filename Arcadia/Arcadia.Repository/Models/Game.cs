@@ -2,11 +2,10 @@
 
 namespace Arcadia.Repository.Models
 {
-    public class Hero
+    public class Game
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Company CreatedBy { get; set; }
-        public ICollection<HeroGame> AppearsIn { get; set; }
+        public ICollection<HeroGame> Heroes { get; set; }
     }
 }

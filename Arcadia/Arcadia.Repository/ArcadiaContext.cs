@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Arcadia.Repository.Models;
+﻿using Arcadia.Repository.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Arcadia.Repository
 {
@@ -15,5 +13,32 @@ namespace Arcadia.Repository
         }
 
         public DbSet<Hero> Heroes { get; set; }
+        public DbSet<Game> Games{ get; set; }
+        public DbSet<HeroGame> HeroGames { get; set; }
+        public DbSet<Company> Companies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Company>().HasKey(c => c.Id);
+            modelBuilder.Entity<Company>().Property(c => c.Id).ValueGeneratedNever();
+
+            modelBuilder.Entity<Game>().HasKey(g => g.Id);
+            modelBuilder.Entity<Game>().Property(g => g.Id).ValueGeneratedNever();
+            modelBuilder.Entity<Hero>().HasKey(h => h.Id);
+            modelBuilder.Entity<Hero>().Property(h => h.Id).ValueGeneratedNever();
+
+            modelBuilder.Entity<HeroGame>().HasKey(hg => new { hg.HeroId, hg.GameId });
+            modelBuilder.Entity<HeroGame>()
+                .HasOne(hg => hg.Hero)
+                .WithMany(h => h.AppearsIn)
+                .HasForeignKey(hg => hg.HeroId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<HeroGame>()
+                .HasOne(hg => hg.Game)
+                .WithMany(g => g.Heroes)
+                .HasForeignKey(hg => hg.GameId)
+                .OnDelete(DeleteBehavior.Restrict);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

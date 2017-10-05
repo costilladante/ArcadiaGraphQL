@@ -1,6 +1,5 @@
 using Arcadia.API.Models;
 using Arcadia.API.Queries;
-using Arcadia.Repository.Repositories;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;

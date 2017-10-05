@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Arcadia.Repository.Interfaces;
+﻿using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Arcadia.Repository.Repositories
 {

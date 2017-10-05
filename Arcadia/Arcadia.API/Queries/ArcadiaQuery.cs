@@ -11,7 +11,12 @@ namespace Arcadia.API.Queries
         {
             Field<HeroType>(
                 "hero",
-                resolve: context => _heroRepository.Get(1)
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id"}),
+                resolve: context =>
+                {
+                    var id = context.GetArgument<int>("id");
+                    return _heroRepository.Get(id);
+                }
             );
         }
     }
