@@ -9,6 +9,7 @@ namespace Arcadia.API.Queries
     {
         public ArcadiaQuery(IHeroRepository _heroRepository)
         {
+            Name = "Query";
             Field<HeroType>(
                 "hero",
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id"}),

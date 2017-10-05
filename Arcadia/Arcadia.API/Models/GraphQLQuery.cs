@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Arcadia.API.Models
+﻿namespace Arcadia.API.Models
 {
     public class GraphQLQuery
     {

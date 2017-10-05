@@ -1,14 +1,16 @@
-﻿using Arcadia.Repository.Models;
+﻿using Arcadia.Repository.Interfaces;
+using Arcadia.Repository.Models;
 using GraphQL.Types;
 
 namespace Arcadia.API.ModelTypes
 {
     public class HeroType : ObjectGraphType<Hero>
     {
-        public HeroType()
+        public HeroType(ICompanyRepository companyRepository )
         {
-            Field(x => x.Id).Description("The ID of the Hero.");
-            Field(x => x.Name).Description("The Name of the Hero.");
+            Name = "Hero";
+            Field(h => h.Id).Description("The ID of the Hero.");
+            Field(h => h.Name).Description("The Name of the Hero.");
         }
     }
 }
