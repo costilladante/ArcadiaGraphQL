@@ -30,7 +30,7 @@ namespace Arcadia.Repository
             modelBuilder.Entity<HeroGame>().HasKey(hg => new { hg.HeroId, hg.GameId });
             modelBuilder.Entity<HeroGame>()
                 .HasOne(hg => hg.Hero)
-                .WithMany(h => h.AppearsIn)
+                .WithMany(h => h.Games)
                 .HasForeignKey(hg => hg.HeroId)
                 .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<HeroGame>()

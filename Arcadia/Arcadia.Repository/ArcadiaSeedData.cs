@@ -49,43 +49,43 @@ namespace Arcadia.Repository
             {
                 Id = 1,
                 Name = "Mario",
-                AppearsIn = new List<HeroGame>
+                Games = new List<HeroGame>
                 {
                     new HeroGame{Game = superMarioBros },
                     new HeroGame{Game = superSmashBros }
                 },
-                CreatedBy = nintendo
+                Company = nintendo
             };
             var link = new Hero
             {
                 Id = 2,
                 Name = "Link",
-                AppearsIn = new List<HeroGame>
+                Games = new List<HeroGame>
                 {
                     new HeroGame{Game = theLeyendOfZelda },
                     new HeroGame{Game = superSmashBros }
                 },
-                CreatedBy = nintendo
+                Company = nintendo
             };
             var sonic = new Hero
             {
                 Id = 3,
                 Name = "Sonic",
-                AppearsIn = new List<HeroGame>
+                Games = new List<HeroGame>
                 {
                     new HeroGame{Game = sonic3D },
                 },
-                CreatedBy = sega
+                Company = sega
             };
             var pikachu = new Hero
             {
                 Id = 4,
                 Name = "Pikachu",
-                AppearsIn = new List<HeroGame>
+                Games = new List<HeroGame>
                 {
                     new HeroGame{Game = superSmashBros }
                 },
-                CreatedBy = nintendo
+                Company = nintendo
             };
             var heroes = new List<Hero>
             {

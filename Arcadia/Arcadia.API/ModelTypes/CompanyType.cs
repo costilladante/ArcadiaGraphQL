@@ -7,6 +7,7 @@ namespace Arcadia.API.ModelTypes
     {
         public CompanyType()
         {
+            Name = "Company";
             Field(c => c.Id).Description("The ID of the company.");
             Field(c => c.Name).Description("The Name of the company.");
         }

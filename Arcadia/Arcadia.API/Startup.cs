@@ -1,7 +1,11 @@
-﻿using Arcadia.API.Queries;
+﻿using Arcadia.API.Models;
+using Arcadia.API.ModelTypes;
+using Arcadia.API.Queries;
 using Arcadia.Repository;
 using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Repositories;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -31,10 +35,21 @@ namespace Arcadia.API
             // Add framework services.
             services.AddMvc();
 
-            services.AddTransient<ArcadiaQuery>();
+            services.AddScoped<ArcadiaQuery>();
+            services.AddScoped<IDocumentExecuter, DocumentExecuter>();
             services.AddTransient<IHeroRepository, HeroRepository>();
+            services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<ICompanyRepository, CompanyRepository>();
+
             services.AddDbContext<ArcadiaContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("ArcadiaDatabase")));
+            
+            services.AddTransient<HeroType>();
+            services.AddTransient<CompanyType>();
+            services.AddTransient<GameType>();
+
+            var sp = services.BuildServiceProvider();
+            services.AddTransient<ISchema>(_ => new ArcadiaSchema(type => (GraphType) sp.GetService(type)){Query = sp.GetService<ArcadiaQuery>()});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

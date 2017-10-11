@@ -7,7 +7,7 @@ namespace Arcadia.API.Queries
 {
     public class ArcadiaQuery : ObjectGraphType
     {
-        public ArcadiaQuery(IHeroRepository _heroRepository)
+        public ArcadiaQuery(IHeroRepository heroRepository)
         {
             Name = "Query";
             Field<HeroType>(
@@ -16,7 +16,7 @@ namespace Arcadia.API.Queries
                 resolve: context =>
                 {
                     var id = context.GetArgument<int>("id");
-                    return _heroRepository.Get(id);
+                    return heroRepository.Get(id);
                 }
             );
         }

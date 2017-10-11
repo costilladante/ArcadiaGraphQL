@@ -10,21 +10,21 @@ namespace Arcadia.API.Controllers
     [Route("graphql")]
     public class GraphQLController : Controller
     {
-        private ArcadiaQuery _arcadiaQuery { get; }
+        private IDocumentExecuter _documentExecuter { get; }
+        private ISchema _schema { get; }
 
-        public GraphQLController(ArcadiaQuery arcadiaQuery)
+        public GraphQLController(IDocumentExecuter documentExecuter, ISchema schema)
         {
-            _arcadiaQuery = arcadiaQuery;
+            _documentExecuter = documentExecuter;
+            _schema = schema;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] GraphQLQuery query)
         {
-            var schema = new Schema {Query = _arcadiaQuery};
-
-            var result = await new DocumentExecuter().ExecuteAsync(_ =>
+            var result = await _documentExecuter.ExecuteAsync(_ =>
             {
-                _.Schema = schema;
+                _.Schema = _schema;
                 _.Query = query.Query;
             }).ConfigureAwait(false);
 
