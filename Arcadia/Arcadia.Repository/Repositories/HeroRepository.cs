@@ -14,9 +14,9 @@ namespace Arcadia.Repository.Repositories
             _db = db;
         }
 
-        public Task<Hero> Get(int id)
+        public async Task<Hero> Get(int id)
         {
-            return _db.Heroes.FirstOrDefaultAsync(hero => hero.Id == id);
+            return await _db.Heroes.FirstOrDefaultAsync(hero => hero.Id == id);
         }
     }
 }

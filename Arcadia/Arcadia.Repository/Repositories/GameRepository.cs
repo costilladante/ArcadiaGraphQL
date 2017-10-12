@@ -17,20 +17,20 @@ namespace Arcadia.Repository.Repositories
             _db = db;
         }
 
-        public Task<List<Game>> GetAll()
+        public async Task<List<Game>> GetAll()
         {
-            return _db.Games.ToListAsync();
+            return await _db.Games.ToListAsync();
         }
 
-        public Task<Game> Get(int id)
+        public async Task<Game> Get(int id)
         {
-            return _db.Games.FirstOrDefaultAsync(game => game.Id == id);
+            return await _db.Games.FirstOrDefaultAsync(game => game.Id == id);
         }
 
-        public List<Game> GetAllByHeroId(int id)
+        public async Task<List<Game>> GetAllByHeroId(int id)
         {
             var heroGames = _db.HeroGames.Where(hg => hg.HeroId == id).Include(g => g.Game);
-            return heroGames.Select(g => g.Game).ToList();
+            return await heroGames.Select(g => g.Game).ToListAsync();
         }
     }
 }
