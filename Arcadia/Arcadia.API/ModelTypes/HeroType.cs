@@ -6,7 +6,7 @@ namespace Arcadia.API.ModelTypes
 {
     public class HeroType : ObjectGraphType<Hero>
     {
-        public HeroType(ICompanyRepository companyRepository )
+        public HeroType(ICompanyRepository companyRepository, IGameRepository gameRepository )
         {
             Name = "Hero";
             Field(h => h.Id).Description("The ID of the Hero.");
@@ -16,6 +16,13 @@ namespace Arcadia.API.ModelTypes
                 {
                     var companyId = context.Source.CompanyId;
                     return companyRepository.Get(companyId);
+                }
+            );
+            Field<ListGraphType<GameType>>("games",
+                resolve: context =>
+                {
+                    var heroId = context.Source.Id;
+                    return gameRepository.GetAllByHeroId(heroId);
                 }
             );
         }
