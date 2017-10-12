@@ -1,5 +1,6 @@
 ﻿using Arcadia.API.Models;
 using Arcadia.API.ModelTypes;
+using Arcadia.API.Mutations;
 using Arcadia.API.Queries;
 using Arcadia.Repository;
 using Arcadia.Repository.Interfaces;
@@ -36,6 +37,7 @@ namespace Arcadia.API
             services.AddMvc();
 
             services.AddScoped<ArcadiaQuery>();
+            services.AddScoped<ArcadiaMutation>();
             services.AddScoped<IDocumentExecuter, DocumentExecuter>();
             services.AddTransient<IHeroRepository, HeroRepository>();
             services.AddTransient<IGameRepository, GameRepository>();
@@ -47,9 +49,15 @@ namespace Arcadia.API
             services.AddTransient<HeroType>();
             services.AddTransient<CompanyType>();
             services.AddTransient<GameType>();
+            services.AddTransient<CompanyInputType>();
 
             var sp = services.BuildServiceProvider();
-            services.AddTransient<ISchema>(_ => new ArcadiaSchema(type => (GraphType) sp.GetService(type)){Query = sp.GetService<ArcadiaQuery>()});
+            services.AddTransient<ISchema>(_ => new ArcadiaSchema(type => (GraphType) sp.GetService(type))
+            {
+                Query = sp.GetService<ArcadiaQuery>(),
+                Mutation = sp.GetService<ArcadiaMutation>()
+                
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -16,7 +16,15 @@ namespace Arcadia.Repository.Repositories
 
         public async Task<Company> Get(int id)
         {
-            return await _db.Companies.FirstOrDefaultAsync(comp => comp.Id == id);
+            var company = await _db.Companies.FirstOrDefaultAsync(comp => comp.Id == id);
+            return company;
+        }
+
+        public Company Add(Company newCompany)
+        {   
+            _db.Companies.Add(newCompany);
+            _db.SaveChanges();
+            return newCompany;
         }
     }
 }

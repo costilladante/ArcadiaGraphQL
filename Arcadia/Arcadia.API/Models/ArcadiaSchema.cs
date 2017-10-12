@@ -1,6 +1,7 @@
 ﻿using Arcadia.API.Queries;
 using GraphQL.Types;
 using System;
+using Arcadia.API.Mutations;
 
 namespace Arcadia.API.Models
 {
@@ -10,6 +11,7 @@ namespace Arcadia.API.Models
             : base(resolveType)
         {
             Query = (ArcadiaQuery) resolveType(typeof(ArcadiaQuery));
+            Mutation = (ArcadiaMutation) resolveType(typeof(ArcadiaMutation));
         }
     }
 }

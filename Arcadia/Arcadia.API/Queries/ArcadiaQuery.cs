@@ -12,7 +12,8 @@ namespace Arcadia.API.Queries
             Name = "Query";
             Field<HeroType>(
                 "hero",
-                arguments: new QueryArguments(new QueryArgument<IntGraphType> {Name = "id"}),
+                arguments: new QueryArguments(
+                    new QueryArgument<NonNullGraphType<IntGraphType>> {Name = "id", Description = "ID of the hero."}),
                 resolve: context =>
                 {
                     var id = context.GetArgument<int>("id");
