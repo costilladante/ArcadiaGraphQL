@@ -20,7 +20,7 @@ namespace Arcadia.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Company>().HasKey(c => c.Id);
-            modelBuilder.Entity<Company>().Property(c => c.Id).ValueGeneratedNever();
+            modelBuilder.Entity<Company>().Property(c => c.Id).ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Game>().HasKey(g => g.Id);
             modelBuilder.Entity<Game>().Property(g => g.Id).ValueGeneratedNever();

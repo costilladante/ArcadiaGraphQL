@@ -7,18 +7,17 @@ namespace Arcadia.API.Mutations
 {
     public class ArcadiaMutation : ObjectGraphType<object>
     {
-        public ArcadiaMutation(IHeroRepository heroRepository, ICompanyRepository companyRepository)
+        public ArcadiaMutation(ICompanyRepository companyRepository)
         {
             /*
              Example of Mutation for company (create):
 
              mutation{
-              createCompany(company: {id: 5, name: "Sony"}){
+              createCompany(company: { name: "Atari"}){
                 id
                 name
               }
             }
-
              */
             Name = "Mutation";
             Field<CompanyType>(

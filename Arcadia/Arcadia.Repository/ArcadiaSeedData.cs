@@ -9,8 +9,8 @@ namespace Arcadia.Repository
         public static void EnsureSeedData(this ArcadiaContext db)
         {
             // Companies
-            var nintendo = new Company {Id = 1, Name = "Nintendo"};
-            var sega = new Company { Id = 2, Name = "Sega" };
+            var nintendo = new Company { Name = "Nintendo"};
+            var sega = new Company { Name = "Sega" };
 
             var companies = new List<Company>
             {
