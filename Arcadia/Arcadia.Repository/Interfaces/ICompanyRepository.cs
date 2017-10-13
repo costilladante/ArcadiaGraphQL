@@ -6,6 +6,7 @@ namespace Arcadia.Repository.Interfaces
     public interface ICompanyRepository
     {
         Task<Company> Get(int id);
-        Company Add(Company newCompany);
+        Task<Company> AddAsync(Company newCompany);
+        Company Update(int companyId, Company company);
     }
 }

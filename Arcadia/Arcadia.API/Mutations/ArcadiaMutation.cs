@@ -23,12 +23,27 @@ namespace Arcadia.API.Mutations
             Field<CompanyType>(
                 "createCompany",
                 arguments: new QueryArguments(
-                    new QueryArgument<CompanyInputType>{ Name = "company", DefaultValue = null}
+                    new QueryArgument<CompanyInputType>{ Name = "company"}
                 ),
                 resolve: context =>
                 {
                     var company = context.GetArgument<Company>("company");
-                    return companyRepository.Add(company);
+                    return companyRepository.AddAsync(company);
+                }
+            );
+
+            Field<CompanyType>(
+                "updateCompany",
+                arguments: new QueryArguments(
+                    new QueryArgument<IntGraphType> { Name = "id" },
+                    new QueryArgument<CompanyInputType> { Name = "company"}
+                ),
+                resolve: context =>
+                {
+                    var companyId = context.GetArgument<int>("id");
+                    var company = context.GetArgument<Company>("company");
+                    company.Id = 1;
+                    return companyRepository.Update(companyId, company);
                 }
             );
         }

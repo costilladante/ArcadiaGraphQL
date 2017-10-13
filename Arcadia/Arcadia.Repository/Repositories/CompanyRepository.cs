@@ -1,4 +1,5 @@
-﻿using Arcadia.Repository.Interfaces;
+﻿using System.Linq;
+using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -20,11 +21,20 @@ namespace Arcadia.Repository.Repositories
             return company;
         }
 
-        public Company Add(Company newCompany)
-        {   
-            _db.Companies.Add(newCompany);
+        public async Task<Company> AddAsync(Company newCompany)
+        {
+            await _db.Companies.AddAsync(newCompany);
             _db.SaveChanges();
             return newCompany;
+        }
+
+        public Company Update(int companyId, Company company)
+        {   
+            var companyToUpdate = _db.Companies.FirstOrDefault(c => c.Id == companyId);
+            companyToUpdate.Name = company.Name;
+            _db.Companies.Attach(companyToUpdate);
+            _db.SaveChanges();
+            return company;
         }
     }
 }
