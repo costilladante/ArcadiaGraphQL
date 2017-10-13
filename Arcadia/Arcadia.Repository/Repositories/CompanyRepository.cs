@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Models;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,15 @@ namespace Arcadia.Repository.Repositories
             _db.Companies.Attach(companyToUpdate);
             _db.SaveChanges();
             return company;
+        }
+
+        public Company Delete(int companyId)
+        {
+            var companyToDelete = _db.Companies.FirstOrDefault(c => c.Id == companyId);
+            if (companyToDelete == null) throw new Exception($"Company with id { companyId } not found.");
+            _db.Companies.Remove(companyToDelete);
+            _db.SaveChanges();
+            return companyToDelete;
         }
     }
 }

@@ -42,8 +42,19 @@ namespace Arcadia.API.Mutations
                 {
                     var companyId = context.GetArgument<int>("id");
                     var company = context.GetArgument<Company>("company");
-                    company.Id = 1;
                     return companyRepository.Update(companyId, company);
+                }
+            );
+
+            Field<CompanyType>(
+                "deleteCompany",
+                arguments: new QueryArguments(
+                    new QueryArgument<IntGraphType> { Name = "id" }
+                ),
+                resolve: context =>
+                {
+                    var companyId = context.GetArgument<int>("id");
+                    return companyRepository.Delete(companyId);
                 }
             );
         }

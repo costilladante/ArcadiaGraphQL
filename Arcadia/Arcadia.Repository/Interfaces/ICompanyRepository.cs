@@ -8,5 +8,6 @@ namespace Arcadia.Repository.Interfaces
         Task<Company> Get(int id);
         Task<Company> AddAsync(Company newCompany);
         Company Update(int companyId, Company company);
+        Company Delete(int companyId);
     }
 }
