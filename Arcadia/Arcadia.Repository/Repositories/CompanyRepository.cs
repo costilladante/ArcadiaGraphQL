@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Arcadia.Repository.Interfaces;
 using Arcadia.Repository.Models;
@@ -14,6 +15,11 @@ namespace Arcadia.Repository.Repositories
         public CompanyRepository(ArcadiaContext db)
         {
             _db = db;
+        }
+
+        public async Task<List<Company>> GetAll()
+        {
+            return await _db.Companies.ToListAsync();
         }
 
         public async Task<Company> Get(int id)

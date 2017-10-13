@@ -1,4 +1,5 @@
-﻿using Arcadia.Repository.Models;
+﻿using System.Collections.Generic;
+using Arcadia.Repository.Models;
 using System.Threading.Tasks;
 
 namespace Arcadia.Repository.Interfaces
