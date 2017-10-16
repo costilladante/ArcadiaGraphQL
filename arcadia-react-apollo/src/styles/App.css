@@ -1,0 +1,50 @@
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 2s linear;
+  height: 42px;
+  border-radius:  50%;
+  border-color: white;
+  border-style: solid;
+  border-width: 3px;
+  float: left;
+}
+
+.App-subHeader{
+  background-color: #3e3555;
+  color: white;
+  height: 18px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 35px;
+  color: white;
+}
+
+.App-title {  
+  float: top;
+  display: table-cell;
+  padding: 4px;
+  font-size: 1.5em;
+}
+
+.App-subTitle {  
+  float: top;
+  display: table-cell;
+  font-size: 12px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  0%   {transform: rotate(0deg);}
+  25%  {transform: rotate(20deg);}
+  50%  {transform: rotate(0deg);}
+  75%  {transform: rotate(-20deg);}
+  100% {transform: rotate(0deg);}
+}
