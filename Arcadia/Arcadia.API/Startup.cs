@@ -8,6 +8,7 @@ using Arcadia.Repository.Repositories;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,17 @@ namespace Arcadia.API
         {
             // Add framework services.
             services.AddMvc();
+
+            // CORS Config
+            var corsBuilder = new CorsPolicyBuilder();
+            corsBuilder.AllowAnyHeader();
+            corsBuilder.AllowAnyMethod();
+            corsBuilder.WithOrigins("http://localhost:3000"); // replace this with your own origin
+            corsBuilder.AllowCredentials();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("ArcadiaCORSPolicy", corsBuilder.Build());
+            });
 
             services.AddScoped<ArcadiaQuery>();
             services.AddScoped<ArcadiaMutation>();
@@ -65,6 +77,8 @@ namespace Arcadia.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            app.UseCors("ArcadiaCORSPolicy");
 
             app.UseGraphiQl();
             app.UseMvc();

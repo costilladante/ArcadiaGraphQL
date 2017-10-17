@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
 
 const arcadiaNetworkInterface = createNetworkInterface({
-    uri: 'http://localhost:50844'
+    uri: 'http://localhost:50845/graphql'
 })
 
 const client = new ApolloClient({
