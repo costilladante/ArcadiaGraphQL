@@ -1,8 +1,10 @@
 using Arcadia.API.Models;
-using Arcadia.API.Queries;
 using GraphQL;
+using GraphQL.Http;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Arcadia.API.Controllers
@@ -12,7 +14,7 @@ namespace Arcadia.API.Controllers
     {
         private IDocumentExecuter _documentExecuter { get; }
         private ISchema _schema { get; }
-
+        
         public GraphQLController(IDocumentExecuter documentExecuter, ISchema schema)
         {
             _documentExecuter = documentExecuter;
@@ -20,19 +22,34 @@ namespace Arcadia.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] GraphQLQuery query)
+        public async Task<IActionResult> Post([FromBody]GraphQLQuery query)
         {
-            var result = await _documentExecuter.ExecuteAsync(_ =>
+            try
             {
-                _.Schema = _schema;
-                _.Query = query.Query;
-            }).ConfigureAwait(false);
+                if (query == null)
+                {
+                    throw new ArgumentException(nameof(query));
+                }
 
-            if (result.Errors?.Count > 0)
-            {
-                return BadRequest();
+                var result = await _documentExecuter.ExecuteAsync(_ =>
+                {
+                    _.Schema = _schema;
+                    _.Query = query.Query;
+                    _.Inputs = query.Variables.ToInputs();
+                    _.OperationName = query.OperationName;
+                }).ConfigureAwait(false);
+
+                if (result.Errors?.Count > 0)
+                {
+                    return BadRequest(result);
+                }
+
+                return Ok(result);
             }
-            return Ok(result);
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
         }
     }
 }

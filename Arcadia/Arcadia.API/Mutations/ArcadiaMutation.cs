@@ -23,7 +23,7 @@ namespace Arcadia.API.Mutations
             Field<CompanyType>(
                 "createCompany",
                 arguments: new QueryArguments(
-                    new QueryArgument<CompanyInputType>{ Name = "company"}
+                    new QueryArgument<NonNullGraphType<CompanyInputType>>{ Name = "company"}
                 ),
                 resolve: context =>
                 {
