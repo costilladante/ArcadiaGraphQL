@@ -4,6 +4,7 @@ import './styles/index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
+import { BrowserRouter } from 'react-router-dom';
 
 const arcadiaNetworkInterface = createNetworkInterface({
     uri: 'http://localhost:50845/graphql'
@@ -14,10 +15,12 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
+    <BrowserRouter>
     <ApolloProvider client={client}>
         <App />
-    </ApolloProvider>,
-    document.getElementById('root')
+    </ApolloProvider>
+    </BrowserRouter>
+    , document.getElementById('root')
 );
 
 

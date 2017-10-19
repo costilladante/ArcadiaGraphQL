@@ -247,3 +247,5 @@ ModelManifest.xml
 
 # Node 
 npm-debug.log.*
+/Arcadia/.vscode
+/Arcadia/.vscode/launch.json
