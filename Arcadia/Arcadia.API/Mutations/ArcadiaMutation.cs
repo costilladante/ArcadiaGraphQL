@@ -35,8 +35,8 @@ namespace Arcadia.API.Mutations
             Field<CompanyType>(
                 "updateCompany",
                 arguments: new QueryArguments(
-                    new QueryArgument<IntGraphType> { Name = "id" },
-                    new QueryArgument<CompanyInputType> { Name = "company"}
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" },
+                    new QueryArgument<NonNullGraphType<CompanyInputType>> { Name = "company"}
                 ),
                 resolve: context =>
                 {
@@ -49,7 +49,7 @@ namespace Arcadia.API.Mutations
             Field<CompanyType>(
                 "deleteCompany",
                 arguments: new QueryArguments(
-                    new QueryArgument<IntGraphType> { Name = "id" }
+                    new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }
                 ),
                 resolve: context =>
                 {

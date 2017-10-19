@@ -41,7 +41,7 @@ namespace Arcadia.Repository.Repositories
             companyToUpdate.Name = company.Name;
             _db.Companies.Attach(companyToUpdate);
             _db.SaveChanges();
-            return company;
+            return companyToUpdate;
         }
 
         public Company Delete(int companyId)

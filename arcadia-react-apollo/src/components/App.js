@@ -4,6 +4,7 @@ import '../styles/App.css';
 import HeroesList from './HeroesList';
 import CompaniesList from './CompaniesList';
 import CreateCompany from './CreateCompany';
+import UpdateCompany from './UpdateCompany';
 import NavigationBar from './NavigationBar';
 import { Switch, Route } from 'react-router-dom';
 
@@ -18,13 +19,14 @@ class App extends Component {
         <header className="App-subHeader">
           <p className="App-subTitle">Sample project implementing GraphQL client using Apollo and React! ¯\_(ツ)_/¯</p>
         </header>
-        <NavigationBar/>
+        <NavigationBar />
         <div>
           <Switch>
             <Route exact path='/' component={CompaniesList} />
             <Route exact path='/create' component={CreateCompany} />
+            <Route exact path='/update' component={UpdateCompany} />
           </Switch>
-          </div>
+        </div>
       </div >
     );
   }
