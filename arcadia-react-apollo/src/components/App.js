@@ -5,6 +5,7 @@ import HeroesList from './HeroesList';
 import CompaniesList from './CompaniesList';
 import CreateCompany from './CreateCompany';
 import UpdateCompany from './UpdateCompany';
+import DeleteCompany from './DeleteCompany';
 import NavigationBar from './NavigationBar';
 import { Switch, Route } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path='/' component={CompaniesList} />
             <Route exact path='/create' component={CreateCompany} />
             <Route exact path='/update' component={UpdateCompany} />
+            <Route exact path='/delete' component={DeleteCompany} />
           </Switch>
         </div>
       </div >
