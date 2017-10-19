@@ -34,7 +34,7 @@ class DeleteCompany extends Component {
                 },
                 update: (store, { data: { deleteCompany } }) => {
                     const data = store.readQuery({ query: ALL_COMPANIES_QUERY });
-                    const removeIndex = data.allCompanies.findIndex(c => c.id == deleteCompany.id);
+                    const removeIndex = data.allCompanies.findIndex(c => c.id === deleteCompany.id);
                     data.allCompanies.splice(removeIndex, 1);
                     store.writeQuery(
                         {

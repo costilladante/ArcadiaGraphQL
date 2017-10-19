@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import logo from '../dante.png';
 import '../styles/App.css';
 import HeroesList from './HeroesList';
-import CompaniesList from './CompaniesList';
-import CreateCompany from './CreateCompany';
-import UpdateCompany from './UpdateCompany';
-import DeleteCompany from './DeleteCompany';
+import { CompaniesList, CreateCompany, UpdateCompany, DeleteCompany } from './company';
 import NavigationBar from './NavigationBar';
 import { Switch, Route } from 'react-router-dom';
 
