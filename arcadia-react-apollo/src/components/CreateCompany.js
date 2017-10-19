@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, gql } from 'react-apollo';
+import { ALL_COMPANIES_QUERY } from './CompaniesList';
 
 class CreateCompany extends Component {
 
@@ -33,6 +34,16 @@ class CreateCompany extends Component {
                     company: {
                         name: name
                     }
+                },
+                update: (store, { data: { createCompany } }) => {
+                    const data = store.readQuery({ query: ALL_COMPANIES_QUERY });
+                    data.allCompanies.splice(0, 0, createCompany);
+                    store.writeQuery(
+                        {
+                            query: ALL_COMPANIES_QUERY,
+                            data
+                        }
+                    );
                 }
             }
         );

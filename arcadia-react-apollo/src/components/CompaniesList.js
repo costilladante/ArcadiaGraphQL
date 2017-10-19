@@ -24,7 +24,7 @@ class CompaniesList extends Component {
     }
 }
 
-const ALL_COMPANIES_QUERY = gql`
+export const ALL_COMPANIES_QUERY = gql`
     query AllCompanies {
         allCompanies {
             id,
