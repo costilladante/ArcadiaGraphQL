@@ -1,10 +1,13 @@
 # ArcadiaGraphQL
-A prototype project using GraphQL.
+A full-stack prototype that implements GraphQL.
 
-Project Nuget Packages:
-* [graphql-dotnet](https://github.com/graphql-dotnet/graphql-dotnet)
-* [graphiql-dotnet](https://github.com/JosephWoodward/graphiql-dotnet)
+##  Projects
 
+### [Arcadia back-end](https://github.com/costilladante/ArcadiaGraphQL/tree/master/Arcadia)
+A .Net Core web app that implements GraphQL and EntityFramework.
+
+### [Arcadia front-end](https://github.com/costilladante/ArcadiaGraphQL/tree/master/arcadia-react-apollo)
+Implements React and Apollo Client for GraphQL.
 
 ## Resources
 
