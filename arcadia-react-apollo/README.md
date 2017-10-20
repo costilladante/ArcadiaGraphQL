@@ -1,4 +1,14 @@
+# Arcadia front-end
+A React project that implements React Apollo for GraphQL.  
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+## Setup
+Replace the uri by yours in the `scr/index.js` file in order to connect with the back-end project:
+```javascript
+const arcadiaNetworkInterface = createNetworkInterface({
+    uri: 'YourUri'
+})
+```
 
 ## Available Scripts
 
