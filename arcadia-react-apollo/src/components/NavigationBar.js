@@ -13,6 +13,10 @@ class NavigationBar extends Component {
                 <Link to='/update' style={{ display: 'inline' }}>Update Company</Link>
                 <div style={{ display: 'inline' }}> | </div>
                 <Link to='/delete' style={{ display: 'inline' }}>Delete Company</Link>
+                <div style={{ display: 'inline' }}> | </div>
+                <Link to='/heroes' style={{ display: 'inline' }}>All Heroes</Link>
+                <div style={{ display: 'inline' }}> | </div>
+                <Link to='/deleteHero' style={{ display: 'inline' }}>Delete Hero</Link>
             </div>
         )
     }
