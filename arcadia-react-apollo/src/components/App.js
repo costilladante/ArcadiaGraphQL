@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from '../dante.png';
 import '../styles/App.css';
 import HeroesList from './HeroesList';
+import DeleteHero from './DeleteHero';
+import CreateHero from './CreateHero';
+
 import { CompaniesList, CreateCompany, UpdateCompany, DeleteCompany } from './company';
 import NavigationBar from './NavigationBar';
 import { Switch, Route } from 'react-router-dom';
@@ -24,9 +27,12 @@ class App extends Component {
             <Route exact path='/create' component={CreateCompany} />
             <Route exact path='/update' component={UpdateCompany} />
             <Route exact path='/delete' component={DeleteCompany} />
+            <Route exact path='/heroes' component={HeroesList} />
+            <Route exact path='/deleteHero' component={DeleteHero} />
+            <Route exact path='/createHero' component={CreateHero} />
           </Switch>
         </div>
-      </div >
+      </div>
     );
   }
 }
