@@ -7,7 +7,7 @@ import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apol
 import { BrowserRouter } from 'react-router-dom';
 
 const arcadiaNetworkInterface = createNetworkInterface({
-    uri: 'http://localhost:50844/GraphQL/'
+    uri: 'http://localhost:50845/graphql'
 })
 
 const client = new ApolloClient({

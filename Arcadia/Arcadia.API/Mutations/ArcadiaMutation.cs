@@ -7,7 +7,7 @@ namespace Arcadia.API.Mutations
 {
     public class ArcadiaMutation : ObjectGraphType<object>
     {
-        public ArcadiaMutation(ICompanyRepository companyRepository, IHeroRepository heroRepository)
+        public ArcadiaMutation(ICompanyRepository companyRepository)
         {
             /*
              Example of Mutation for company (create):
@@ -31,19 +31,6 @@ namespace Arcadia.API.Mutations
                     return companyRepository.AddAsync(company);
                 }
             );
-
-           Field<HeroType>(
-           "createHero",
-           arguments: new QueryArguments(
-               new QueryArgument<NonNullGraphType<HeroInputType>> { Name = "hero" }
-           ),
-           resolve: context =>
-           {
-               var hero = context.GetArgument<Hero>("hero");
-               return heroRepository.AddAsync(hero);
-           }
-       );
-
 
             Field<CompanyType>(
                 "updateCompany",
@@ -70,20 +57,6 @@ namespace Arcadia.API.Mutations
                     return companyRepository.Delete(companyId);
                 }
             );
-
-            Field<HeroType>(
-               "deleteHero",
-               arguments: new QueryArguments(
-                   new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "id" }
-               ),
-               resolve: context =>
-               {
-                   var heroId = context.GetArgument<int>("id");
-                   return heroRepository.Delete(heroId);
-               }
-            );
-
-
         }
     }
 }
